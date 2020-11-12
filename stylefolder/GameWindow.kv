@@ -1,0 +1,20 @@
+<GameWindow>:
+    name: "game_window"
+    game_text: game_text
+
+    on_enter: root.set_game()
+
+    FloatLayout:
+    	canvas:
+            Rectangle:
+                source: 'Images/login_background.jpg'
+                size: self.size
+                pos: self.pos
+        Label:
+            id: game_text
+            text: "Welcome!"
+            size_hint: (.25, .25)
+			color: (1, 1, 1, 1)
+            markup: True
+            font_size: 40
+            pos_hint: {"center_x": .5, "center_y": .65 }

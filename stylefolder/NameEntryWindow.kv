@@ -1,0 +1,56 @@
+<NameEntryWindow>:
+    name: "name_entry_window"
+
+    real_name: real_name
+    fake_name: fake_name
+
+    FloatLayout:
+    	canvas:
+            Rectangle:
+                source: 'Images/login_background.jpg'
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "Real Name: "
+            size_hint: (.25, .10)
+            pos_hint: {'x': .10, 'y':.525}
+            color: (1, 1, 1, 1)
+            markup: True
+            font_size: 40
+        TextInput:
+            id: real_name
+            multiline: False
+            font_size: 30
+            size_hint: (.3, .05)
+            pos_hint: {'center_x': .5, 'y': .550}
+        Label:
+            text: "Fake Name: "
+            size_hint: (.25, .10)
+            pos_hint: {'x': .10, 'y':.425}
+            color: (1, 1, 1, 1)
+            markup: True
+            font_size: 40
+        TextInput:
+            id: fake_name
+            multiline: False
+            font_size: 30
+            size_hint: (.3, .05)
+            pos_hint: {'center_x': .5, 'y': .450}
+        Button:
+            text: "Enter Names"
+			font_size: 20
+            size_hint: (.25, .10)
+            pos_hint: {'center_x':.5, 'center_y':.35}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.register_name()
+                root.reset_inputs()
+        Button:
+            text: "Start Game"
+			font_size: 20
+            size_hint: (.25, .10)
+            pos_hint: {'center_x':.5, 'center_y':.15}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.start_game()
+                root.reset_inputs()
