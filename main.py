@@ -37,9 +37,9 @@ for window in windows:
 screen_manager.current = "name_entry_window"
 
 
-class MyFitnessApp(App):
+class MyEmpireApp(App):
     def build(self):
         return screen_manager
 
 if __name__ == "__main__":
-    MyFitnessApp().run()
+    MyEmpireApp().run()
